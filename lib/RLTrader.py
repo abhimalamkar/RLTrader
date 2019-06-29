@@ -135,7 +135,7 @@ class RLTrader:
 
         model_params = self.optimize_agent_params(trial)
         model = self.Model(self.Policy, train_env, verbose=self.model_verbose, nminibatches=self.nminibatches,
-                           tensorboard_log=self.tensorboard_path, **model_params)
+                                **model_params)
 
         last_reward = -np.finfo(np.float16).max
         evaluation_interval = int(
@@ -200,7 +200,7 @@ class RLTrader:
         model_params = self.get_model_params()
 
         model = self.Model(self.Policy, train_env, verbose=self.model_verbose, nminibatches=self.nminibatches,
-                           tensorboard_log=self.tensorboard_path, **model_params)
+                           **model_params)
 
         self.logger.info(f'Training for {n_epochs} epochs')
 
