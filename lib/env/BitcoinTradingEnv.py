@@ -139,6 +139,7 @@ class BitcoinTradingEnv(gym.Env):
         return reward if np.isfinite(reward) else 0
 
     def _done(self):
+        print(self.trades)
         return self.net_worths[-1] < self.initial_balance / 10 or self.current_step == len(self.df) - self.forecast_steps - 1
 
     def reset(self):
